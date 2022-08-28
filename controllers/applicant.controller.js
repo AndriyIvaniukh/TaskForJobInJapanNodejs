@@ -1,4 +1,7 @@
-const {applicantService} = require("../services");
+const {applicantService, emailService} = require("../services");
+const {emailActionEnum} = require("../enums");
+const {configs} = require("../configs");
+
 module.exports = {
     getAll: async (req, res, next) => {
         try {
@@ -10,7 +13,14 @@ module.exports = {
     },
     create: async (req, res, next) => {
         try {
+            const {email} = req.body;
             const newApplicant = await applicantService.create(req.body);
+            const searchLinks = await emailService.createSearchLink(configs.FRONTEND_URL, newApplicant);
+            if (searchLinks === '') {
+                await emailService.sendMail(email, emailActionEnum.ADD_NEW_APPLICANT_NO_POSITION)
+            } else {
+                await emailService.sendMail(email, emailActionEnum.ADD_NEW_APPLICANT, {allPositions: searchLinks});
+            }
             res.status(201).json(newApplicant.id);
         } catch (e) {
             next(e);

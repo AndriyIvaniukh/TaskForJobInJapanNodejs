@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "6351d25d-2cbf-4e0c-8573-b36046311aec",
+		"name": "TaskForJapanNodeJs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21079065"
+	},
+	"item": [
+		{
+			"name": "Positions",
+			"item": [
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}positions?category=angular",
+							"host": [
+								"{{HOST}}positions"
+							],
+							"query": [
+								{
+									"key": "tag",
+									"value": "Bla",
+									"disabled": true
+								},
+								{
+									"key": "level",
+									"value": "junior",
+									"disabled": true
+								},
+								{
+									"key": "category",
+									"value": "angular"
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}positions/:id",
+							"host": [
+								"{{HOST}}positions"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "630938e090cc8c5e63a41cb1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"category\": \"angular\",\n    \"level\": \"junior\",\n    \"company\": \"Epam\",\n    \"description\": \"every night in my dream\",\n    \"japaneseRequired\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}positions",
+							"host": [
+								"{{HOST}}positions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateByID",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"japaneseRequired\":true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}positions/:id",
+							"host": [
+								"{{HOST}}positions"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63089facf671e1f2bc8ff811"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ByID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}positions/:id",
+							"host": [
+								"{{HOST}}positions"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63089facf671e1f2bc8ff811"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Applicant",
+			"item": [
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}applicants",
+							"host": [
+								"{{HOST}}applicants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"vanqvish95@gmail.com\",\n    \"categories\": [\n        \"react\",\n        \"angular\"\n    ],\n    \"japaneseKnowledge\": true,\n    \"level\": \"middle\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}applicants",
+							"host": [
+								"{{HOST}}applicants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"vanqvish95@gmail.com\",\n    \"categories\": [\n        \"react\",\n        \"angular\",\n        \"nodejs\"\n    ],\n    \"japaneseKnowledge\": true,\n    \"level\": \"junior\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}applicants/:id",
+							"host": [
+								"{{HOST}}applicants"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "630923236b400e99527f0369"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ByID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}applicants/:id",
+							"host": [
+								"{{HOST}}applicants"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "630923236b400e99527f0369"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

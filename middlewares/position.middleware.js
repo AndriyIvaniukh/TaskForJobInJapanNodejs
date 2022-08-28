@@ -1,7 +1,7 @@
 const {positionValidator} = require("../validators");
 const CustomError = require("../errors/CustomError");
 const {positionService} = require("../services");
-const {Types} = require("mongoose");
+
 module.exports = {
     isPositionValidForCreate: (req, res, next) => {
         try {

@@ -1,0 +1,28 @@
+<table style="width: 100%; padding: 45px 35px; box-sizing: border-box">
+    <tr>
+        <td style="font-size: 18px; text-align: center;">
+            One of position was removed!<br/><br/>
+
+            <p style="font-size: 16px">
+                Category: {{{category}}}<br/>
+                Level: {{{level}}}<br/>
+                Company: {{{company}}}<br/>
+                Japanese Required: {{{japaneseRequired}}}<br/>
+                {{#if description}}
+                    {{{description}}}<br/>
+                {{/if}}
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: center;">
+            <p style="margin: 15px 0 0;">
+                {{#if searchedLinks}}
+                    Also if you want see all position for you, use this links<br/>
+                    {{{searchedLinks}}}
+                {{/if}}
+
+            </p>
+        </td>
+    </tr>
+</table>

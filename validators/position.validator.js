@@ -1,7 +1,6 @@
 const Joi = require('joi');
 
 const {constants} = require('../configs');
-const {array} = require("joi");
 
 module.exports = {
     addPositionValidator: Joi.object({
@@ -18,6 +17,7 @@ module.exports = {
     queryValidator: Joi.object({
         category: Joi.string().lowercase().valid(...Object.values(constants.CATEGORIES)),
         level: Joi.string().lowercase().valid(...Object.values(constants.LEVELS)),
-        tag: Joi.string().lowercase()
+        tag: Joi.string().lowercase(),
+        japaneseRequired: Joi.boolean()
     })
 }

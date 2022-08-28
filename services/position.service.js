@@ -1,7 +1,7 @@
 const {Position} = require("../dataBase");
 
 module.exports = {
-    findAll: (params = {}) => {
+    findAll: async (params = {}) => {
         return Position.find(params);
     },
     findOne: (params = {}) => {
@@ -16,4 +16,5 @@ module.exports = {
     deleteOnePosition: (params) => {
         return Position.deleteOne(params);
     }
+
 }
